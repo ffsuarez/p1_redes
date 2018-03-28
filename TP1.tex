@@ -1,0 +1,110 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{pdfpages}
+\usepackage{subfigure}
+\author{}
+\date{}
+
+\begin{document}
+%insertar portada
+\includepdf{figuras/portada1}
+
+%\tableofcontents
+
+%En este trabajo se explicará cómo realizar una presentación de un proyecto para los trabajos de laboratorio de la materia \textbf{Interfaces}.
+
+\section{Ejercicio Nº 1}
+Explique en pocas palabras, ¿Por qué surge la necesidad de crear redes de datos?
+\subsection{Desarrollo}
+Porque se precisa la transmisión de información intercambiando datos entre dos dispositivos separados una cierta distancia.
+%https://definicion.de/red-de-datos/
+
+\section{Ejercicio Nº2}
+Describa brevemente las diferentes topologías de red. Ejemplifique.
+\subsection{Desarrollo}
+\begin{enumerate}
+\item[•]Punto a Punto: Enlace permanente entre dos puntos finales, por ejemplo un telegrafo.
+\item[•]Bus: Contiene un único canal de comunicaciones sobre el cual se conectan los diferentes dispositivos.Por ejemplo: 1 Wire.
+\item[•]Estrella: Los dispositivos se conectan hacia un único punto central y todas las comunicaciones se hacen a través de ése punto. Por ejemplo: Conexión de múltiples computadoras en un Hogar, con un Router.
+\item[•]Anillo: Cada estación tiene una única conexión de entrada y otra de salida, y la información pasa hacia la siguiente estación.Por ejemplo: Conexión del servicio de internet por cable. 
+\item[•]Arbol: Interconexión de forma troncal, donde los nodos se ramifican de forma jerarquica. Por ejemplo: Conexión al servicio de Internet de grandes empresas.
+\end{enumerate}
+
+\section{Ejercicio Nº3}
+¿Como clasifica las redes según su cobertura?. Ejemplifique.
+\subsection{Desarrollo}
+\begin{enumerate}
+\item[•]Red de Área Personal: El alcance suele ser de unos pocos metros.
+\item[•]Red de Área Local: El alcance suele abarcar desde 200[m] hasta 1[Km].
+\item[•]Red de Área Metropolitana: El alcance suele abarcar hasta 50[Km].
+\item[•]Red de Área Amplia: El alcance suele abarcar un país o distancias superiores.
+\end{enumerate}
+\section{Ejercicio Nº4}
+¿Qué ventajas y desventajas ofrecen las topologías de malla y estrella?
+\subsection{Desarrollo}
+Ventajas de las topologías de malla:
+\begin{enumerate}
+\item[•]No requiere nodo central; por lo tanto se reduce el riesgo de fallos, y el mantenimiento periódico.
+\item[•]Prescinden de enrutamiento manual si se implementan protocolos de enrutamiento dinámicos.
+\item[•]La comunicación entre dos nodos cualquiera se puede establecer incluso si varios nodos fallan; debido a que ofrece otros caminos posibles para la transmisión de la información.
+\end{enumerate}
+Desventajas de la topología de malla:
+\begin{enumerate}
+\item[•]Costo de ampliación de redes implementados en medios guiados, incrementa de forma dramática.
+\end{enumerate}
+Ventajas de las topologias de estrella:
+\begin{enumerate}
+\item[•]Facilidad de incorporar nuevos equipos.
+\item[•]Reconfiguración rápida.
+\item[•]Facilidad de prevenir fallos y/o conflictos, debido a que si ocurre algún fallo no se afecta a los demás equipos.
+\item[•]Centralización de la red.
+\end{enumerate}
+Desventajas de las topologías en estrella:
+\begin{enumerate}
+\item[•]Si el repetidor (hub o switch) falla, la comunicación se interrumpe.
+\item[•]Requiere más cables que la topología en Bus, o Malla, por lo tanto es más costosa.
+\end{enumerate}
+\section{Ejercicio Nº5}
+Calcule en qué medida aumenta el costo de cada topología si se quiere triplicar su tamaño.
+\subsection{Desarrollo}
+En el caso de la topología en Malla:
+Si se triplica el tamaño de la red, el número de cables que debe colocarse en dicho caso puede obtenerse a partír del número de enlaces en una malla completa, dicho valor es
+\begin{equation}
+N=\frac{n \cdot (n-1)}{2}
+\end{equation}
+Por lo tanto al triplicarse se obtienen $3 \cdot N$ enlaces, por lo tanto hay que agregar $2 \cdot N$ enlaces.
+\section{Ejercicio Nº6}
+¿Cuántos puntos de falla presentará cada topología y cuál será su impacto en el servicio?
+\subsection{Desarrollo}
+En caso de que se produzca una falla en la topólogia en Estrella, el impacto es muy alto debido a que la comunicación se interrumpe totalmente; mientras que si ocurre una falla sobre una topología en Malla no se produce un impacto importante debido a la posibilidad de encontrar otros caminos sobre los cuáles puede circular la información.
+Sobre la topología en Bus, el impacto es alto debido a que la información recorre necesariamente el cable principal. Sobre la topología en Arbol se produce un impacto importante pero reducido en comparación con la topología en Estrella, debido a que la interrupción de la información solo se establece en la sección que pertenece al Nodo Central que ha fallado.
+\section{Ejercicio Nº7}
+Explique la diferencia entre red de acceso, distribución y núcleo.
+%https://es.wikipedia.org/wiki/Red_de_entrega_de_contenidos
+%http://www.itesa.edu.mx/netacad/switching/course/module1/1.1.1.5/1.1.1.5.html
+\subsection{Desarrollo}
+La Red de Acceso conecta a los usuarios finales con el proveedor de servicios de la Red; mientras que la Red de Distribución se encarga de interactuar entre la Red de Acceso y Nucleo, también incorpora nuevas Redes.
+La Red de Núcleo proporciona los cimientos de la Red, y permite la conectividad entre los distintos usuarios.
+\section{Ejercicio Nº8}
+¿Qué requerimientos de ancho de banda y disponibilidad requerirán un servicio similar a Netflix y uno tipo blog?
+\subsection{Desarrollo}
+Se requiere un gran ancho de banda y buena disponibilidad para un servicio similar a Netflix, mientras que no se requiere demasiado ancho de banda o disponibilidad para un blog.
+\section{Ejercicio Nº9}
+En la actualidad, las redes de comunicación utilizan conmutación de paquetes, a su criterio
+¿Qué datos habrá que agregar a estos paquetes para que puedan viajar por las distintas
+redes?
+\subsection{Desarrollo}
+Se requiere un número de paquete, un origen y un destino.
+\section{Ejercicio Nº10}
+¿Cuál es la diferencia entre Internet, Intranet e internet?
+\subsection{Desarrollo}
+Internet es un nombre comercial para el ofrecimiento de distintos servicios tales como Intercambio de Archivos, navegación, envío de e-mails.
+Mientras que una Intranet ofrece servicios similares al anterior, pero solamente poseen alcance interno a una organización que puede ser por ejemplo: Una empresa, una Universidad, entre otros.
+Se asocia el concepto de "internet" a la interconexion de redes de distinta naturaleza.
+\end{document}
